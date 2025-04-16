@@ -20,15 +20,16 @@ Both **visual results** and **quantitative analysis (MSE)** are provided to asse
 
 ## 📂 Files Included
 
-| File                           | Description                                           |
-|--------------------------------|-------------------------------------------------------|
-| `main.py`                      | Entry point to execute K-Means clustering            |
-| `model.py`                     | Core implementation of the K-Means algorithm         |
-| `utils.py`                     | Utilities for image handling, MSE calculation, plotting |
-| `image_clustered_{k}.jpg`      | Output images compressed with \(k\) clusters         |
-| `mse_vs_k.png`                 | Plot of MSE against number of clusters               |
-| `report.tex` / `report.pdf`    | Full LaTeX source and compiled report                |
-| `README.md`                    | You're reading it!                                   |
+| File                        | Description                                                                            |
+|-----------------------------|----------------------------------------------------------------------------------------|
+| `main.py`                   | Entry point to execute K-Means clustering                                              |
+| `model.py`                  | Core implementation of the K-Means algorithm                                           |
+| `utils.py`                  | Utilities for image handling, MSE calculation, plotting                                |
+| `image_clustered_{k}.jpg`   | Output images compressed with \(k\) clusters                                           |
+| `mse_vs_k.png`              | Plot of MSE against number of clusters                                                 |
+| `report.tex` / `report.pdf` | Full LaTeX source and compiled report                                                  |
+| `metrics.py`                | Collect metrics likes avg runtime, avg memory, mean mse, std mse etc for different k's |
+| `README.md`                 | You're reading it!                                                                     |
 
 ---
 
@@ -50,7 +51,7 @@ Both **visual results** and **quantitative analysis (MSE)** are provided to asse
 
 ---
 
-## 🛠️ How to Run
+## 🛠️ How to run this code
 
 1. Clone the repository:
     ```bash
