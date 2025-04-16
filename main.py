@@ -19,7 +19,7 @@ def main():
         clustered_image = X_clustered.reshape(img_shape)
 
         mse = error(original_image, clustered_image)
-        print(f"\nMSE value for k={k} is {mse}")
+        print(f"\nMSE value for k = {k} is {round(mse, 5)}")
         mse_list.append(mse)
         save_image(clustered_image, f'image_clustered_{k}.jpg')
 

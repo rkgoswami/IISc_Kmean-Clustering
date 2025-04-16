@@ -4,9 +4,10 @@ import numpy as np
 import matplotlib.pyplot as plt
 from memory_profiler import memory_usage
 from model import KMeans
-from utils import get_image, error
+from utils import get_image, error, log_metrics_table
 
-def collect_metrics(k, num_trials=10):
+
+def collect_metrics(k, num_trials=5):
     """Collect performance metrics for a specific k value."""
     metrics = {
         'runtimes': [],
@@ -16,7 +17,7 @@ def collect_metrics(k, num_trials=10):
     }
 
     for t in range(num_trials):
-        print(f"Running the trail {t}")
+        print(f"  Running the trail {t}")
         # Fresh image load for each trial
         original_image = get_image('image.jpg')
         X = original_image.reshape(-1, 3)
@@ -75,7 +76,7 @@ def main():
     metrics_list = []
 
     for k in ks:
-        print(f"Start processing k={k}.")
+        print(f"\nStart processing k={k}.")
         metrics = collect_metrics(k)
         metrics_list.append(metrics)
         print(f"End processing k={k}.")
@@ -86,3 +87,4 @@ def main():
 
 if __name__ == '__main__':
     main()
+    log_metrics_table()

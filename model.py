@@ -20,6 +20,7 @@ class KMeans:
         self.cluster_centers = X[indices]
 
         for _ in range(max_iter):
+            self.n_iter_ += 1
             # Compute squared distances
             diff = X[:, np.newaxis] - self.cluster_centers
             squared_distances = np.sum(diff ** 2, axis=2)
