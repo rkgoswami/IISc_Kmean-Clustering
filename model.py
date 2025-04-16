@@ -1,16 +1,20 @@
 import numpy as np
+import time
+from memory_profiler import memory_usage
 
 class KMeans:
     def __init__(self, k: int, epsilon: float = 1e-6) -> None:
         self.num_clusters = k
         self.cluster_centers = None
         self.epsilon = epsilon
+        self.n_iter_ = 0  # Track number of iterations
     
     def fit(self, X: np.ndarray, max_iter: int = 100) -> None:
         # Initialize cluster centers (need to be careful with the initialization,
         # otherwise you might see that none of the pixels are assigned to some
         # of the clusters, which will result in a division by zero error)
 
+        self.n_iter_ = 0
         n_samples = X.shape[0]
         indices = np.random.choice(n_samples, self.num_clusters, replace=False)
         self.cluster_centers = X[indices]

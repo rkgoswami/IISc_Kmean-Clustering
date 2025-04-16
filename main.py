@@ -7,6 +7,7 @@ def main():
     mse_list = []
 
     for k in ks:
+        print(f"\nProcessing k={k}")
         original_image = get_image('image.jpg')
         img_shape = original_image.shape
         X = original_image.reshape(-1, 3)
@@ -18,6 +19,7 @@ def main():
         clustered_image = X_clustered.reshape(img_shape)
 
         mse = error(original_image, clustered_image)
+        print(f"\nMSE value for k={k} is {mse}")
         mse_list.append(mse)
         save_image(clustered_image, f'image_clustered_{k}.jpg')
 
